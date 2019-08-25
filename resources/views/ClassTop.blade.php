@@ -1,5 +1,5 @@
 @extends('layouts.app')
-@section('pageTitle', 'Топ группы')
+@section('pageTitle', 'Топ Потока')
 @section('content')
 <style>
 .Photo

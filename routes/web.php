@@ -1,5 +1,6 @@
 <?php
 use App\Groups;
+use App\ClassTop;
 use Illuminate\Http\Request;
 /*
 |--------------------------------------------------------------------------
@@ -16,10 +17,11 @@ use Illuminate\Http\Request;
    * Вывести панель с задачами
    */
   Route::get('/', function () {
-    $tasks = Groups::orderBy('Place', 'asc')->get();
-
-    return view('tasks', [
-      'tasks' => $tasks
+    $FirstTop = Groups::orderBy('Place','asc')->get();
+    $SecondTop = ClassTop::orderBy('Place','asc')->get();
+    return view('MainPage',[
+      'First'=>$FirstTop,
+      'Second'=>$SecondTop
     ]);
   });
   /*
@@ -31,3 +33,19 @@ use Illuminate\Http\Request;
       'Top' => $Top
     ]);
   });
+  /*
+  *display leaders of class
+  */
+  Route::get('/ClassTop' , function() {
+    $Top = ClassTop::orderBy('Place','asc')->get();
+    return view('ClassTop', [
+      'Top' => $Top
+    ]);
+  });
+  /*
+  * Move to discord server invite link
+  */
+  Route::get('/DiscordServer' , function() {
+    return redirect('https://discord.gg/Kesfu4f');
+  });
+  

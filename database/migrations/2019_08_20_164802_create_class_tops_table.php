@@ -4,7 +4,7 @@ use Illuminate\Support\Facades\Schema;
 use Illuminate\Database\Schema\Blueprint;
 use Illuminate\Database\Migrations\Migration;
 
-class CreateTasksTable extends Migration
+class CreateClassTopsTable extends Migration
 {
     /**
      * Run the migrations.
@@ -13,8 +13,11 @@ class CreateTasksTable extends Migration
      */
     public function up()
     {
-        Schema::create('goups', function (Blueprint $table) {
+        Schema::create('class_tops', function (Blueprint $table) {
             $table->bigIncrements('id');
+            $table->integer("Place");
+            $table->string('Name');
+            $table->string('Photo');
             $table->timestamps();
         });
     }
@@ -26,6 +29,6 @@ class CreateTasksTable extends Migration
      */
     public function down()
     {
-        Schema::dropIfExists('goups');
+        Schema::dropIfExists('class_tops');
     }
 }

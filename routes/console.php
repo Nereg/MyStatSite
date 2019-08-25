@@ -12,14 +12,5 @@ use Illuminate\Foundation\Inspiring;
 */
 
 Artisan::command('updateDB', function () {
-    $MAPI = new MyStat();
-    $token= $MAPI->Login(env('MYSTAT_PASSWORD','YOU_DONT_INCLUDE_PASSWORD'),env('MYSTAT_USER',"IN_.ENV_FILE")); 
-    $leaderboard = $MAPI->GetLeaderboard($token);
-    $Top = App\Groups::all();
-    foreach ($leaderboard as $key => $value) {
-        $Top->Name = $value->full_name;
-        $Top->Photo = $value->photo_path;
-        $Top->Place = $value->position;
-        $Top->save();
-    }
+ 
 })->describe('Update all data in DB like top`s');

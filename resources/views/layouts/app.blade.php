@@ -10,7 +10,7 @@
   <link href="css/mdb.min.css" rel="stylesheet">
   <!-- Your custom styles (optional) -->
   <link href="css/style.css" rel="stylesheet">
-    <!-- SCRIPTS -->
+  <!-- SCRIPTS -->
   <!-- JQuery -->
   <script type="text/javascript" src="js/jquery-3.4.1.min.js"></script>
   <!-- Bootstrap tooltips -->
@@ -19,6 +19,19 @@
   <script type="text/javascript" src="js/bootstrap.min.js"></script>
   <!-- MDB core JavaScript -->
   <script type="text/javascript" src="js/mdb.min.js"></script>
+  <!-- Global site tag (gtag.js) - Google Analytics -->
+<script async src="https://www.googletagmanager.com/gtag/js?id=UA-129486253-3"></script>
+<!-- Icon -->
+<link rel="shortcut icon" href="{{url('/').'/icon.ico'}}">
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
+
+  gtag('config', 'UA-129486253-3');
+</script>
+
+  <title>@yield('pageTitle') - MyStat by Oleg Kusil</title>
 </head>
 <body>
     <!--Main Navigation-->
@@ -27,7 +40,7 @@
         <nav class="navbar navbar-expand-lg navbar-dark primary-color">
 
             <!-- Navbar brand -->
-            <a class="navbar-brand" href="#">Главная</a>
+            <a class="navbar-brand" href="{{url('/')}}">Главная</a>
 
             <!-- Collapse button -->
             <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#basicExampleNav" aria-controls="basicExampleNav" aria-expanded="false" aria-label="Toggle navigation">
@@ -40,12 +53,12 @@
                 <!-- Links -->
                 <ul class="navbar-nav mr-auto">
                     <li class="nav-item">
-                        <a class="nav-link" href="#">
+                        <a class="nav-link" href="{{url('/GroupTop')}}">
                             Таблица лидеров класса
                         </a>
                     </li>
                     <li class="nav-item">
-                        <a class="nav-link" href="#">
+                        <a class="nav-link" href="{{url('/ClassTop')}}">
                                 Таблица лидеров потока
                             </a>
                     </li>

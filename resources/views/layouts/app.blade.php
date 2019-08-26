@@ -66,7 +66,7 @@
                 <!-- Links -->
                 <ul class="navbar-nav nav-flex-icons">
                     <li class="nav-item">
-                        <a class="nav-link" href="https://discord.gg/2XBdfkn" target="_blank"><i class="fab fa-discord"></i></a>
+                    <a class="nav-link" href="{{url('/DiscordServer')}}" target="_blank"><i class="fab fa-discord"></i></a>
                     </li>
                 </ul>
             </div>

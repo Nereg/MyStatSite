@@ -4,8 +4,8 @@
 /storage/*.key
 /vendor
 .env
-/.vscode
-/.vscode/*.*
+.vscode
+.vscode/*.*
 .env.backup
 .phpunit.result.cache
 Homestead.json

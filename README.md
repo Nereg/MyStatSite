@@ -10,4 +10,4 @@ It`s site for all MyStat [project](https://github.com/users/Nereg/projects/1) bu
  
  ![My Plugins](https://image.prntscr.com/image/2Lbspc0ITTW6hud7fGGMFQ.png)
  
- * My mind XD
+ * My brain XD

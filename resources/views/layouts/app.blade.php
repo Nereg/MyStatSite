@@ -39,7 +39,6 @@
   <title>@yield('pageTitle') - MyStat by Oleg Kusil</title>
 </head>
 <body>
-        @yield('CssFile')
     <!--Main Navigation-->
     <div>
         <!--Navbar-->

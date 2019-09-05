@@ -1,5 +1,6 @@
 @extends('layouts.app')
 @section('pageTitle', 'Главная Страница')
+@section('CssFile','test.css')
 @section('content')
 <style>
 .FirstBody
@@ -18,80 +19,70 @@
 {
     margin-top: 100px;
 }
-.FirstTop
+.AdvContainer
 {
-    max-width: 400px;
-}
-.list-group-item
-{
-    background-color: transparent;
-    font-size: 24px;
-    border: 2px solid rgba(0,0,0,.31);
-}
-.list-group-item > a
-{
-    color: black;
-}
-.list-group-item:hover
-{
-    background-color: #00000017;
-}
-.Spacer
-{
-    max-width: 400px;
-}
-.Photo
-{
-    width: 100px;
-    border-radius: 100px;
-    margin-left: 10px;
-    margin-right: 10px;
-}
-.tableHeader:hover
-{
-    background-color: transparent;
+    margin-top: 10px;
 }
 .row
 {
     margin-right: 0px;
+}
+.FirstElement
+{
+    background-color: gray;
+}
+.SecondElement
+{
+    color: white;
+    text-align: left;
+}
+
+.AdvContainer > row
+{
+    max-width: 200px;
+}
+.PlusImg
+{
+    width: 200px;
+}
+.PlusHeader
+{
+    font-size: 20px;
+    font-weight: bold;
+}
+.plus
+{
+    margin-bottom: 10px;
 }
 </style>
 <div class="FirstBody">
     <div class="Logo text-center">
         <img src="https://mystat.itstep.org/assets/images/logo.png">
     </div>
-    <div class="TopsContainer Container">
-        <div class="row">
-            <div class="FirstTop col-sm">
-                <ul class="list-group list-group-flush">
-                    <li class="list-group-item text-center tableHeader"><a href="{{url('/GroupTop')}}">Топ группы</a></li>
-                    @foreach ($First as $top)
-                    @if ($loop->iteration == 6)
-                    @break
-                    @else
-                <li class="list-group-item text-center">{{$top->Place}}<img src='{{$top->Photo}}' class="Photo" onerror="this.onerror=null;this.src='https://mystat.itstep.org/assets/resources/profile.svg?v=67734166db7ccc381ee701f2a11ac7db';"><div>{{$top->Name}}</div></li>
-                    @endif
-                    @endforeach
-                </ul>
+    <div class='container AdvContainer text-center'>
+        <div class="row plus">
+            <div class="col-sm FirstElement">
+                <img src="img/testimage.bmp" class="PlusImg">
             </div>
-            <div class="col-sm Spacer">
+            <div class="col-sm SecondElement">
+                <div class="PlusHeader">Заголовок</div>
+                Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.
             </div>
-            <div class="SecondTop">
-                    <ul class="list-group list-group-flush">
-                            <ul class="list-group list-group-flush">
-                            <li class="list-group-item text-center tableHeader"><a href="{{url('/ClassTop')}}">Топ потока</a></li>
-                                    @foreach ($Second as $top)
-                                    @if ($loop->iteration == 6)
-                                    @break
-                                    @else
-                                <li class="list-group-item text-center">{{$top->Place}}<img src='{{$top->Photo}}' class="Photo" onerror="this.onerror=null;this.src='https://mystat.itstep.org/assets/resources/profile.svg?v=67734166db7ccc381ee701f2a11ac7db';"><div>{{$top->Name}}</div></li>
-                                    @endif
-                                    @endforeach
-                                </ul>
-                    </ul>
+            <div class="col">
             </div>
         </div>
-    </div>
+        <div class="row plus">
+            <div class="col">
+            </div>
+            <div class="col-sm SecondElement">
+            <div class="PlusHeader">Заголовок</div>
+                    orem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.
+            </div>
+            <div class="col-sm FirstElement">
+                <img src="img/testimage.bmp" class="PlusImg">
+            </div>
+        </div>
+    </div> 
     <div class="Platforms Conatiner text-center">
         <div class="row">
             <div class="col-sm">
@@ -126,13 +117,4 @@
             </div>
         </div>
 </div>
-<!--
-<div class="SecondBody">
-    <div class="NewsContainer">
-        <div class="News">
-
-        </div>
-    </div>
-</div>
--->
 @endsection

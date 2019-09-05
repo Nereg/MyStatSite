@@ -20,7 +20,12 @@
   <!-- MDB core JavaScript -->
   <script type="text/javascript" src="js/mdb.min.js"></script>
   <!-- Global site tag (gtag.js) - Google Analytics -->
-<script async src="https://www.googletagmanager.com/gtag/js?id=UA-129486253-3"></script>
+  <script async src="https://www.googletagmanager.com/gtag/js?id=UA-129486253-3"></script>
+  @if (null !== function (){return yield('CssFile');})
+      <!-- own css selected from page -->
+  <style src="{{url('/')}}/css/@yield('CssFile')"></style>
+  @endif
+
 <!-- Icon -->
 <link rel="shortcut icon" href="{{url('/').'/icon.ico'}}">
 <script>
@@ -34,6 +39,7 @@
   <title>@yield('pageTitle') - MyStat by Oleg Kusil</title>
 </head>
 <body>
+        @yield('CssFile')
     <!--Main Navigation-->
     <div>
         <!--Navbar-->

@@ -48,4 +48,10 @@ use Illuminate\Http\Request;
   Route::get('/DiscordServer' , function() {
     return redirect('https://discord.gg/Kesfu4f');
   });
+  /*
+  * Admin panel
+  */
+  Route::get('/Admin', function() {
+    return view('AdminPanel');
+  });
   
